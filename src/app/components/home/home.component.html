@@ -1,1 +1,19 @@
-<p>home works!</p>
+<div class="container" >
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor=" let item of list">
+          <div class="card my-3">
+            <img src={{item.images[0]}} style="max-height: 200px; " alt={{item.name}}>
+            <div class="card-body">
+              <h5 class="card-title">Title : {{item.name}}</h5>
+              <p class="card-text">Price : {{item.price | currency}}</p>
+              <p class="card-text"> {{item.description}}</p>
+              <button class="btn btn-primary" (click)="add(item.id)">Add to cart</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    
+   
+  </div>

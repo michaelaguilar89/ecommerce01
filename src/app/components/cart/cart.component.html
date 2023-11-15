@@ -1,1 +1,29 @@
-<p>cart works!</p>
+<div class="container">
+    <h3 class="card-header text-center mb-3 mt-3">Products on your cart</h3>
+    <div class="container mx-auto" *ngIf="list.length==0">
+      <h3>You do not have products in your cart yet, navigate to <a class="link" routerLink="/home">home</a>
+         to select your favorite products</h3>
+    </div>
+    <table class="table table-striped" *ngIf="list.length>0">
+        <thead>
+          <tr>
+            
+            <th scope="col">Name</th>
+            <th scope="col">Image</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">SubTotal</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let i of list">
+          <tr>
+            
+            <td>{{i.name}}</td>
+            <td><img src={{i.image}} style="width: 80px; height: 80px;"></td>
+            <td>{{i.price}}</td>
+            <td>{{i.quantity}}</td>
+            <td>{{i.subTotal}}</td>
+          </tr>
+         </tbody>
+      </table> 
+</div>
